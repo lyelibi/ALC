@@ -49,7 +49,7 @@ def clus_lc(gij,gii,gjj, ns=2):
 ''' aspc only requires a correlation matrix as input:
     here we convert the correlation to a dictionary for convenience. adding new
     entries in a dict() is much faster than editing a numpy matrix'''
-def atc(G, cn= None):
+def alc(G, cn= None):
     
     N = len(G)
     gdic = dict(enumerate(dict(enumerate(row)) for row in G)) 
@@ -178,4 +178,4 @@ def atc(G, cn= None):
 
 N = 500
 data,_ = make_blobs(n_samples=N,n_features=5000,shuffle=False,centers=10,random_state=0)
-sol  = agglo_spc(np.corrcoef(data))
+sol  = alc(np.corrcoef(data))
